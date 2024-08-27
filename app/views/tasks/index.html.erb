@@ -3,9 +3,9 @@
   <% @tasks.each do |task| %>
     <li>
       <%= link_to task.title , task_path(task) %>
-      <%= link_to "Delete",
+      <%= button_to "Delete",
         delete_task_path(task),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        method: :delete, confirm: "Are you sure?"
       %>
     </li>
   <% end %>
